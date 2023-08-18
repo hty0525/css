@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .block {
+        display: block;
+        border: 1px solid black;
+      }
+      .inline {
+        display: inline;
+        border: 1px solid black;
+      }
+      .inline-block {
+        display: inline-block;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin-bottom: 30px">
+      <h3>html 태그의 기적적인 display 속성</h3>
+      <div class="block">Block</div>
+      <!-- 대표적으로 div, p, ul, li, form, section, article, h1 ~ 6, hr, 등등  -->
+      <div>
+        <div class="inline">inline</div>
+        <div class="inline">inline</div>
+        <div class="inline">inline</div>
+        <div class="inline">inline</div>
+      </div>
+      <!-- 대표적으로 span, button, input, select,   등등  -->
+      <div class="inline-block">inline-block</div>
+    </div>
+
+    <div style="margin-bottom: 30px">
+      <h3>inline과 inline-block의 차이</h3>
+      <div style="border: 2px solid red; overflow: hidden">
+        <div
+          style="
+            display: inline;
+            border: 3px solid black;
+            padding: 30px;
+            margin: 10px;
+          "
+        >
+          inline
+        </div>
+        <!-- inline은 딱 자기만큼의 좌우 크기를 가지게 된다 상하는
+            padding or margin을 아무리 크게 적용해도 보이는 것만 되는 것 처럼 보임 -->
+      </div>
+      <div style="border: 2px solid red">
+        <div
+          style="
+            display: inline-block;
+            border: 3px solid black;
+            padding: 3px;
+            margin: 10px;
+          "
+        >
+          inline-block
+        </div>
+        <!-- inline과 block의 속성을 합친 것으로 블럭처럼 한줄씩 자리를 차지하는 것이 아니라,
+          딱 자기 크기만큼만 차지한다 inline과는 다르게  padding margin이 상하에도 전부 적용된다.
+        -->
+      </div>
+    </div>
+
+    <div style="margin-bottom: 30px">
+      <h3>박스 사이징</h3>
+      <div
+        style="
+          box-sizing: border-box;
+          width: 100px;
+          height: 100px;
+          border: 10px solid black;
+          padding: 20px;
+        "
+      >
+        <div style="padding: 10px; border: 1px solid black">border-box</div>
+      </div>
+      <div
+        style="
+          box-sizing: content-box;
+          width: 100px;
+          height: 100px;
+          border: 10px solid black;
+          padding: 20px;
+        "
+      >
+        <div style="padding: 10px; border: 1px solid black">content-box</div>
+      </div>
+    </div>
+  </body>
+</html>
